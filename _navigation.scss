@@ -1,0 +1,119 @@
+nav {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $background-nav;
+  align-items: center;
+  padding: 20px 5%;
+  transition: $transition;
+  box-shadow: $shadow;
+
+  a {
+    color: $foreground-nav;
+    padding: 0px 10px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li:hover ul {
+      opacity: 1;
+      pointer-events: all;
+      transition: $transition;
+    }
+
+    ul {
+      box-shadow: $shadow;
+      opacity: 0;
+      pointer-events: none;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      background-color: $background-nav;
+      border-radius: 10px;
+      padding-top: 1em;
+      transition: $transition;
+
+      a {
+        padding: 10px 30px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: right;
+
+    button {
+      margin: 5px 5px;
+    }
+  }
+}
+
+nav.scrolled {
+  padding: 0px 40px;
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+  color: $accent;
+  display: inline-block;
+}
+
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: $accent;
+  transition: $transition;
+}
+
+a:hover::after,
+a:focus::after {
+  width: 100%;
+}
+
+button, .button {
+  background: $background-accent;
+  color: $foreground;
+  padding: 5px 20px;
+  border: 2px solid $background-accent;
+  border-radius: 10px;
+  transition: $transition;
+}
+
+button.hollow, .button.hollow {
+  color: $accent;
+  border: 2px solid $accent;
+  background: none;
+}
+
+button:hover, .button:hover {
+  border-color: $accent;
+}
+
+button.hollow:hover,
+button.hollow:focus,
+.button.hollow:hover,
+.button.hollow:focus {
+  background: $background-accent;
+  color: $foreground;
+  border-color: $background-accent;
+}
+
+button.hollow:active,
+button:active,
+.button.hollow:active,
+.button:active  {
+  background: $background-accent-dark;
+  color: $foreground;
+  border-color: $background-accent-dark;
+}
