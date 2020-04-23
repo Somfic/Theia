@@ -1,0 +1,113 @@
+form {
+  display: table;
+  width: 100%;
+
+  .labeled {
+    position: relative;
+    margin-top: 0.8rem;
+
+    label {
+      position: absolute;
+      top: 0;
+      padding: 11px 0px 0px 13px;
+      transition: $transition;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    input:focus,
+    input:valid {
+      + label {
+        font-size: 75%;
+        transform: translate3d(0, -100%, 0);
+        opacity: 0.8;
+      }
+    }
+
+    .result {
+      position: relative;
+      display: block;
+      width: 100%;
+
+      border: 1px solid $border;
+      border-radius: 0px 0px 10px 10px;
+      z-index: -1;
+
+      max-height: 0px;
+      opacity: 0;
+      padding: 0px 10px;
+      margin: 0px;
+      bottom: 15px;
+
+      font-size: 0.7rem;
+
+      transition: $transition;
+    }
+
+    .result.error {
+      background-color: rgba(255, 74, 74, 0.123);
+    }
+
+    .result.success {
+      background-color: rgba(107, 255, 70, 0.123);
+    }
+  }
+
+  .labeled.success {
+    .success {
+      padding: 5px 20px;
+      padding-top: 14px;
+
+      margin-top: -20px;
+      margin-bottom: 10px;
+
+      bottom: 0px;
+
+      max-height: 3em;
+      opacity: 1;
+    }
+  }
+
+  .labeled.error {
+    .error {
+      padding: 5px 10px;
+      padding-top: 14px;
+
+      margin-top: -20px;
+      margin-bottom: 10px;
+
+      bottom: 0px;
+
+      max-height: 3em;
+      opacity: 1;
+    }
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    background-color: $background-item;
+    color: $foreground-item;
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    line-height: 1.25;
+    border: 1px solid $border;
+    border-radius: 10px;
+    transition: $transition;
+    box-shadow: none;
+  }
+
+  button[type="submit"] {
+    float: right;
+  }
+
+  input {
+    margin: 10px 0px;
+  }
+
+  input:active,
+  input:focus {
+    border: 1px solid $accent;
+  }
+}

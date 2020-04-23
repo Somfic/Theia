@@ -5,24 +5,39 @@ $transition : all ease 250ms;
     padding: 0;
     margin: 0;
     outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-size: 100%;
 }
 
-html, body {
+html {
     height: 100%;
 }
 
 body {
     background-color: $background;
     color: $foreground;
+    height: auto;
 }
 
 main {
     margin: 20px 10%;
 }
 
-@import './flex';
+// Navigation
 @import './navigation';
+
+// Forms
+@import './form'; 
+
+// Overviews
+@import './overview';
+
+// Text
 @import './type';
+
+// Flexbox
+@import './flex';
 
 .outline {
     border: 1px solid $border;

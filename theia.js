@@ -5,3 +5,8 @@ $(window).on('scroll', () => {
         $('nav').removeClass('scrolled');
     }
 });
+
+$('input').keypress(() => {
+    $(this).parent().removeClass('error');
+    $(this).parent().removeClass('success');
+});

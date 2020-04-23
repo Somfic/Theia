@@ -1,10 +1,19 @@
 $background : black;
-$foreground : white;
+$foreground : rgb(197, 197, 197);
 
-$background-nav : rgb(39, 39, 39);
-$foreground-nav: $foreground;
+$background-item : rgb(19, 19, 19);
+$foreground-item: white;
 
-$border: gray;
-$accent: orange;
-$background-accent: darken($accent, 10%);
-$background-accent-dark: darken($accent, 20%);
+$background-nav :$background-item;
+$foreground-nav: $foreground-item;
+
+$shadow: 0px 0px 10px rgb(0, 0, 0);
+
+$accent: rgb(228, 148, 0);
+$accent-hover: lighten($accent, 10%);
+$accent-click: darken($accent, 10%);
+$accent-foreground : $accent;
+
+$foreground-accent: $background;
+
+$border: rgba(231, 231, 231, 0.15);

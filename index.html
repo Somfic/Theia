@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="theia-light.css">
+    <link rel="stylesheet" href="./theia-dark.css">
 
     <title>Theia</title>
 </head>
 
 <body>
     <nav>
-        <a href="">Logo</a>
+        <span class="title">eChest</span>
         <ul class="links">
             <li><a href="">Link 1</a></li>
             <li><a href="">Link 2</a></li>
@@ -25,11 +25,12 @@
             </li>
         </ul>
         <div class="buttons">
-            <button class="hollow">Login</button>
-            <button>Create account</button>
+            <a class="button hollow">Login</a>
+            <a class="button">Create account</a>
         </div>
     </nav>
     <main>
+        <section>
         <h1>Flex</h1>
         <h2>.flex</h2>
         <div class="outline flex">
@@ -55,10 +56,37 @@
             <div class="outline" style="width: 50px; height: 50px"></div>
             <div class="outline fill" style="width: 50px; height: 60px"></div>
         </div>
-        <h1>Navbar</h1>
+    </section>
+    <section>
+        <h1>Forms</h1>
+        <form action="">
+            <div class="labeled">
+                <input type="text" required>
+                <label>Username</label>
+                <span class="result success">Name is available.</span>
+            </div>
+            <div class="labeled">
+                <input type="password" required>
+                <label>Password</label>
+                <span class="result error">Enter a valid password.</span>
+            </div>
+        </form>
+        <button onclick="$('.labeled').addClass('success')">Submit</button>
+    </section>
+    <section>
+        <h1>Overview</h1>
+        <ul class="overview">
+            <li><span>Test1</span><span>Test2</span><span>Test3</span></li>
+            <li><span>Second test 2</span><span>Test 2</span><span>Test 3</span></li>
+        </ul>
+        <ul class="overview">
+            <li><span>Total</span><span>haha</span></li>
+        </ul>
+    </section>
     </main>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="./theia.js"></script>
+
 </html>

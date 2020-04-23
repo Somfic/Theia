@@ -1,57 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla&family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap");
 * {
   padding: 0;
   margin: 0;
   outline: none;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
 }
 
-html, body {
+html {
   height: 100%;
 }
 
 body {
   background-color: black;
-  color: white;
+  color: #c5c5c5;
+  height: auto;
 }
 
 main {
   margin: 20px 10%;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.flex.spaced {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.flex.fit {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.flex .fill {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.flex.nowrap {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 nav {
@@ -61,16 +31,19 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #272727;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #131313;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 5%;
+  padding: 20px 10%;
   -webkit-transition: all ease 250ms;
   transition: all ease 250ms;
+  -webkit-box-shadow: 0px 0px 10px black;
+          box-shadow: 0px 0px 10px black;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
 }
 
 nav a {
@@ -95,6 +68,8 @@ nav .links li:hover ul {
 }
 
 nav .links ul {
+  -webkit-box-shadow: 0px 0px 10px black;
+          box-shadow: 0px 0px 10px black;
   opacity: 0;
   pointer-events: none;
   list-style: none;
@@ -106,9 +81,10 @@ nav .links ul {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  background-color: #272727;
+  background-color: #131313;
   border-radius: 10px;
   padding-top: 1em;
+  padding-bottom: 0.5em;
   -webkit-transition: all ease 250ms;
   transition: all ease 250ms;
 }
@@ -130,18 +106,25 @@ nav .buttons {
           justify-content: right;
 }
 
-nav .buttons button {
-  margin: 5px 5px;
+nav .buttons button, nav .buttons a {
+  margin: 5px;
+  cursor: pointer;
+}
+
+nav .buttons a::after {
+  display: none;
 }
 
 nav.scrolled {
-  padding: 0px 40px;
+  padding: 0px;
   opacity: 0.8;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 a {
   text-decoration: none;
-  color: orange;
+  color: #e49400;
   display: inline-block;
 }
 
@@ -150,52 +133,208 @@ a::after {
   display: block;
   width: 0;
   height: 2px;
-  background-color: orange;
+  background-color: #e49400;
   -webkit-transition: all ease 250ms;
   transition: all ease 250ms;
 }
 
-a:hover::after,
-a:focus::after {
+a:hover::after {
   width: 100%;
 }
 
-button, .button {
-  background: #cc8400;
-  color: white;
+button,
+.button {
+  background: #e49400;
+  color: black;
   padding: 5px 20px;
-  border: 2px solid #cc8400;
+  border: 2px solid #e49400;
   border-radius: 10px;
   -webkit-transition: all ease 250ms;
   transition: all ease 250ms;
 }
 
-button.hollow, .button.hollow {
-  color: orange;
-  border: 2px solid orange;
+button.hollow,
+.button.hollow {
+  color: #e49400;
+  border: 2px solid #e49400;
   background: none;
 }
 
-button:hover, .button:hover {
-  border-color: orange;
-}
-
+button:hover,
+.button:hover,
 button.hollow:hover,
-button.hollow:focus,
-.button.hollow:hover,
-.button.hollow:focus {
-  background: #cc8400;
-  color: white;
-  border-color: #cc8400;
+.button.hollow:hover {
+  background: #ffae18;
+  color: black;
+  border-color: #ffae18;
 }
 
 button.hollow:active,
 button:active,
 .button.hollow:active,
 .button:active {
-  background: #996300;
+  background: #b17300;
+  color: black;
+  border-color: #b17300;
+}
+
+form {
+  display: table;
+  width: 100%;
+}
+
+form .labeled {
+  position: relative;
+  margin-top: 0.8rem;
+}
+
+form .labeled label {
+  position: absolute;
+  top: 0;
+  padding: 11px 0px 0px 13px;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+form .labeled input:focus + label,
+form .labeled input:valid + label {
+  font-size: 75%;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  opacity: 0.8;
+}
+
+form .labeled .result {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(231, 231, 231, 0.15);
+  border-radius: 0px 0px 10px 10px;
+  z-index: -1;
+  max-height: 0px;
+  opacity: 0;
+  padding: 0px 10px;
+  margin: 0px;
+  bottom: 15px;
+  font-size: 0.7rem;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+form .labeled .result.error {
+  background-color: rgba(255, 74, 74, 0.123);
+}
+
+form .labeled .result.success {
+  background-color: rgba(107, 255, 70, 0.123);
+}
+
+form .labeled.success .success {
+  padding: 5px 20px;
+  padding-top: 14px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  bottom: 0px;
+  max-height: 3em;
+  opacity: 1;
+}
+
+form .labeled.error .error {
+  padding: 5px 10px;
+  padding-top: 14px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  bottom: 0px;
+  max-height: 3em;
+  opacity: 1;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  background-color: #131313;
   color: white;
-  border-color: #996300;
+  width: 100%;
+  display: block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  line-height: 1.25;
+  border: 1px solid rgba(231, 231, 231, 0.15);
+  border-radius: 10px;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+form button[type="submit"] {
+  float: right;
+}
+
+form input {
+  margin: 10px 0px;
+}
+
+form input:active,
+form input:focus {
+  border: 1px solid #e49400;
+}
+
+ul.overview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  border-radius: 10px;
+  margin: 10px 0px;
+  border: 1px solid rgba(231, 231, 231, 0.15);
+}
+
+ul.overview :first-child {
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+ul.overview :last-child {
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom: none;
+}
+
+ul.overview li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  background-color: #131313;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(231, 231, 231, 0.15);
+}
+
+ul.overview li * {
+  -ms-flex-preferred-size: 0px;
+      flex-basis: 0px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: left;
+}
+
+.title {
+  font-family: 'Baloo Bhaina 2', cursive;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 h1,
@@ -278,8 +417,44 @@ p {
   /* 24 / 16 */
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex.spaced {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex.fit {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex .fill {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.flex.nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 .outline {
-  border: 1px solid gray;
+  border: 1px solid rgba(231, 231, 231, 0.15);
   border-radius: 10px;
   padding: 10px;
   margin: 10px;

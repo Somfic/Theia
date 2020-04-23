@@ -2,12 +2,13 @@ nav {
   position: sticky;
   top: 0px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: $background-nav;
   align-items: center;
-  padding: 20px 5%;
+  padding: 20px 10%;
   transition: $transition;
   box-shadow: $shadow;
+  backdrop-filter: blur(0px);
 
   a {
     color: $foreground-nav;
@@ -36,6 +37,7 @@ nav {
       background-color: $background-nav;
       border-radius: 10px;
       padding-top: 1em;
+      padding-bottom: 0.5em;
       transition: $transition;
 
       a {
@@ -50,15 +52,21 @@ nav {
     align-content: stretch;
     justify-content: right;
 
-    button {
-      margin: 5px 5px;
+    button, a {
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    a::after {
+      display: none;
     }
   }
 }
 
 nav.scrolled {
-  padding: 0px 40px;
+  padding: 0px;
   opacity: 0.8;
+  backdrop-filter: blur(10px);
 }
 
 a {
@@ -76,44 +84,41 @@ a::after {
   transition: $transition;
 }
 
-a:hover::after,
-a:focus::after {
+a:hover::after {
   width: 100%;
 }
 
-button, .button {
-  background: $background-accent;
-  color: $foreground;
+button,
+.button {
+  background: $accent;
+  color: $foreground-accent;
   padding: 5px 20px;
-  border: 2px solid $background-accent;
+  border: 2px solid $accent;
   border-radius: 10px;
   transition: $transition;
 }
 
-button.hollow, .button.hollow {
-  color: $accent;
+button.hollow,
+.button.hollow {
+  color: $accent-foreground;
   border: 2px solid $accent;
   background: none;
 }
 
-button:hover, .button:hover {
-  border-color: $accent;
-}
-
+button:hover,
+.button:hover,
 button.hollow:hover,
-button.hollow:focus,
-.button.hollow:hover,
-.button.hollow:focus {
-  background: $background-accent;
-  color: $foreground;
-  border-color: $background-accent;
+.button.hollow:hover {
+  background: $accent-hover;
+  color: $foreground-accent;
+  border-color: $accent-hover;
 }
 
 button.hollow:active,
 button:active,
 .button.hollow:active,
-.button:active  {
-  background: $background-accent-dark;
-  color: $foreground;
-  border-color: $background-accent-dark;
+.button:active {
+  background: $accent-click;
+  color: $foreground-accent;
+  border-color: $accent-click;
 }
