@@ -1,0 +1,10 @@
+$background : black;
+$foreground : white;
+
+$background-nav : rgb(39, 39, 39);
+$foreground-nav: $foreground;
+
+$border: gray;
+$accent: orange;
+$background-accent: darken($accent, 10%);
+$background-accent-dark: darken($accent, 20%);

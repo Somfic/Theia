@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&family=Rubik&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+main {
+  margin: 20px 10%;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex.spaced {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex.fit {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex .fill {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.flex.nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #272727;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 5%;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+nav a {
+  color: white;
+  padding: 0px 10px;
+}
+
+nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+}
+
+nav .links li:hover ul {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+nav .links ul {
+  opacity: 0;
+  pointer-events: none;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  background-color: #272727;
+  border-radius: 10px;
+  padding-top: 1em;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+nav .links ul a {
+  padding: 10px 30px;
+}
+
+nav .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+nav .buttons button {
+  margin: 5px 5px;
+}
+
+nav.scrolled {
+  padding: 0px 40px;
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+  display: inline-block;
+}
+
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: orange;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+a:hover::after,
+a:focus::after {
+  width: 100%;
+}
+
+button, .button {
+  background: #cc8400;
+  color: white;
+  padding: 5px 20px;
+  border: 2px solid #cc8400;
+  border-radius: 10px;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
+}
+
+button.hollow, .button.hollow {
+  color: orange;
+  border: 2px solid orange;
+  background: none;
+}
+
+button:hover, .button:hover {
+  border-color: orange;
+}
+
+button.hollow:hover,
+button.hollow:focus,
+.button.hollow:hover,
+.button.hollow:focus {
+  background: #cc8400;
+  color: white;
+  border-color: #cc8400;
+}
+
+button.hollow:active,
+button:active,
+.button.hollow:active,
+.button:active {
+  background: #996300;
+  color: white;
+  border-color: #996300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+}
+
+* {
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 3em;
+  /* 48 / 16 */
+  line-height: 1em;
+  /* 48 / 48 */
+  margin-top: 0.5em;
+  /* 24 / 48 */
+}
+
+h2 {
+  font-size: 2.25em;
+  /* 36 / 16 */
+  line-height: 1.333333333333333em;
+  /* 48 / 36 */
+  margin-top: 0.6666666666666667em;
+  /* 24 / 36 */
+}
+
+h3 {
+  font-size: 1.5em;
+  /* 24 / 16 */
+  line-height: 1em;
+  /* 24 / 24 */
+  margin-top: 1em;
+  /* 24 / 24 */
+}
+
+h4 {
+  font-size: 1.3125em;
+  /* 21 / 16 */
+  line-height: 1.142857142857143em;
+  /* 24 / 21 */
+  margin-top: 1.142857142857143em;
+  /* 24 / 21 */
+}
+
+h5 {
+  font-size: 1.125em;
+  /* 18 / 16 */
+  line-height: 1.333333333333333em;
+  /* 24 / 18 */
+  margin-top: 1.333333333333333em;
+  /* 24 / 18 */
+}
+
+h6 {
+  font-size: 1em;
+  /* 16 / 16 */
+  line-height: 1.5em;
+  /* 24 / 16 */
+  margin-top: 1.5em;
+  /* 24 / 16 */
+}
+
+p {
+  font-size: 1em;
+  /* 16 / 16 */
+  line-height: 1.5em;
+  /* 24 / 16 */
+  margin-top: 1.5em;
+  /* 24 / 16 */
+}
+
+.outline {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+/*# sourceMappingURL=theia-dark.css.map */
