@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="theia-light.css">
+
+    <title>Theia</title>
+</head>
+
+<body>
+    <nav>
+        <a href="">Logo</a>
+        <ul class="links">
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a>
+                <ul>
+                    <li><a href="">Link 3a</a></li>
+                    <li><a href="">Link 3b</a></li>
+                    <li><a href="">Link 3c</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="buttons">
+            <button class="hollow">Login</button>
+            <button>Create account</button>
+        </div>
+    </nav>
+    <main>
+        <h1>Flex</h1>
+        <h2>.flex</h2>
+        <div class="outline flex">
+            <div class="outline" style="width: 50px; height: 40px"></div>
+            <div class="outline" style="width: 50px; height: 50px"></div>
+            <div class="outline" style="width: 50px; height: 60px"></div>
+        </div>
+        <h2>.flex.spaced</h2>
+        <div class="outline flex spaced">
+            <div class="outline" style="width: 50px; height: 40px"></div>
+            <div class="outline" style="width: 50px; height: 50px"></div>
+            <div class="outline" style="width: 50px; height: 60px"></div>
+        </div>
+        <h2>.flex.fit</h2>
+        <div class="outline flex fit">
+            <div class="outline" style="width: 50px; height: 40px"></div>
+            <div class="outline" style="width: 50px; height: 50px"></div>
+            <div class="outline" style="width: 50px; height: 60px"></div>
+        </div>
+        <h2>.flex > .fill</h2>
+        <div class="outline flex">
+            <div class="outline" style="width: 50px; height: 40px"></div>
+            <div class="outline" style="width: 50px; height: 50px"></div>
+            <div class="outline fill" style="width: 50px; height: 60px"></div>
+        </div>
+        <h1>Navbar</h1>
+    </main>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="./theia.js"></script>
+</html>
