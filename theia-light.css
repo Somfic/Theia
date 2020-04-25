@@ -12,16 +12,37 @@
 
 html {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body {
   background-color: white;
   color: #313131;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 main {
   margin: 20px 10%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+footer {
+  height: 80px;
+  background-color: white;
 }
 
 nav {
@@ -111,10 +132,6 @@ nav .buttons button, nav .buttons a {
   cursor: pointer;
 }
 
-nav .buttons a::after {
-  display: none;
-}
-
 nav.scrolled {
   padding: 0px;
   opacity: 0.8;
@@ -151,6 +168,12 @@ button,
   border-radius: 10px;
   -webkit-transition: all ease 250ms;
   transition: all ease 250ms;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+button::after, .button::after {
+  display: none;
 }
 
 button.hollow,
@@ -164,9 +187,9 @@ button:hover,
 .button:hover,
 button.hollow:hover,
 .button.hollow:hover {
-  background: #ffb733;
+  background: #ffc04d;
   color: #313131;
-  border-color: #ffb733;
+  border-color: #ffc04d;
 }
 
 button.hollow:active,
@@ -180,26 +203,35 @@ button:active,
 
 form {
   display: table;
-  width: 100%;
+  width: 40%;
+  min-width: 270px;
 }
 
 form .labeled {
   position: relative;
-  margin-top: 0.8rem;
+  margin: 1rem 0px;
+  -webkit-transition: all ease 250ms;
+  transition: all ease 250ms;
 }
 
 form .labeled label {
   position: absolute;
   top: 0;
   padding: 11px 0px 0px 13px;
+  margin-left: 8px;
   -webkit-transition: all ease 250ms;
   transition: all ease 250ms;
   opacity: 0.5;
   pointer-events: none;
 }
 
+form .labeled input:focus {
+  margin: 2rem 0px;
+}
+
 form .labeled input:focus + label,
 form .labeled input:valid + label {
+  margin-left: 0px;
   font-size: 75%;
   -webkit-transform: translate3d(0, -100%, 0);
           transform: translate3d(0, -100%, 0);
@@ -207,20 +239,13 @@ form .labeled input:valid + label {
 }
 
 form .labeled .result {
-  position: relative;
-  display: block;
   width: 100%;
+  display: none;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0px 0px 10px 10px;
-  z-index: -1;
-  max-height: 0px;
-  opacity: 0;
-  padding: 0px 10px;
-  margin: 0px;
-  bottom: 15px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px 0px;
   font-size: 0.7rem;
-  -webkit-transition: all ease 250ms;
-  transition: all ease 250ms;
 }
 
 form .labeled .result.error {
@@ -231,24 +256,20 @@ form .labeled .result.success {
   background-color: rgba(107, 255, 70, 0.123);
 }
 
+form .labeled.success input {
+  border: 1px solid green;
+}
+
 form .labeled.success .success {
-  padding: 5px 20px;
-  padding-top: 14px;
-  margin-top: -20px;
-  margin-bottom: 10px;
-  bottom: 0px;
-  max-height: 3em;
-  opacity: 1;
+  display: block;
+}
+
+form .labeled.error input {
+  border: 1px solid red;
 }
 
 form .labeled.error .error {
-  padding: 5px 10px;
-  padding-top: 14px;
-  margin-top: -20px;
-  margin-bottom: 10px;
-  bottom: 0px;
-  max-height: 3em;
-  opacity: 1;
+  display: block;
 }
 
 form input[type="text"],
@@ -268,10 +289,6 @@ form input[type="password"] {
           box-shadow: none;
 }
 
-form button[type="submit"] {
-  float: right;
-}
-
 form input {
   margin: 10px 0px;
 }
@@ -281,7 +298,7 @@ form input:focus {
   border: 1px solid orange;
 }
 
-ul.overview {
+form .submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,18 +306,35 @@ ul.overview {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form .submit button {
+  width: 80%;
+}
+
+form .submit * {
+  margin: 5px;
+}
+
+ul.overview {
   list-style: none;
   border-radius: 10px;
   margin: 10px 0px;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-ul.overview :first-child {
+ul.overview li:first-child {
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }
 
-ul.overview :last-child {
+ul.overview li:last-child {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   border-bottom: none;
@@ -328,10 +362,82 @@ ul.overview li * {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   text-align: left;
 }
 
-.title {
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  word-wrap: break-word;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background-color: #fafafa;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.158);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.158);
+  padding: 20px;
+}
+
+.card img {
+  margin: 10px 0px;
+  display: block;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 180px;
+}
+
+.card .body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0px 20px;
+}
+
+.card .body .title {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card .body .text {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card .footer {
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.card .footer button,
+.card .footer .button {
+  margin-left: 0;
+}
+
+a.card {
+  color: #313131;
+}
+
+a.card:hover,
+a.card:focus {
+  border: 1px solid orange;
+}
+
+a.card::after {
+  display: none;
+}
+
+.card.no-padding {
+  padding: 0px;
+}
+
+nav .title {
   font-family: 'Baloo Bhaina 2', cursive;
   font-weight: 500;
   font-size: 1.5rem;
@@ -413,8 +519,12 @@ p {
   /* 16 / 16 */
   line-height: 1.5em;
   /* 24 / 16 */
-  margin-top: 1.5em;
+  margin-bottom: 0.5em;
   /* 24 / 16 */
+}
+
+.text-center {
+  text-align: center;
 }
 
 .flex {
@@ -429,6 +539,26 @@ p {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.wrapper {
+  margin: 10px;
+}
+
+.flex.vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .flex.spaced {
@@ -451,6 +581,14 @@ p {
 .flex.nowrap {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .outline {

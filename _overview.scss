@@ -1,17 +1,15 @@
 ul.overview {
-    display: flex;
-    flex-direction: column;
     list-style: none;
     border-radius: 10px;
     margin: 10px 0px;
     border: 1px solid $border;
 
-    :first-child {
+    li:first-child {
         border-top-left-radius: 9px;
         border-top-right-radius: 9px;
     }
 
-    :last-child {
+    li:last-child {
         border-bottom-left-radius: 9px;
         border-bottom-right-radius: 9px;
         border-bottom: none;
@@ -29,6 +27,7 @@ ul.overview {
         * {
             flex-basis: 0px;
             flex-grow: 1;
+            flex-shrink: 1;
             text-align: left;
         }
     }

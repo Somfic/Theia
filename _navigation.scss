@@ -56,10 +56,6 @@ nav {
       margin: 5px;
       cursor: pointer;
     }
-
-    a::after {
-      display: none;
-    }
   }
 }
 
@@ -96,6 +92,12 @@ button,
   border: 2px solid $accent;
   border-radius: 10px;
   transition: $transition;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+button::after, .button::after {
+  display: none;
 }
 
 button.hollow,

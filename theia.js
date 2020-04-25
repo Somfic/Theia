@@ -6,7 +6,8 @@ $(window).on('scroll', () => {
     }
 });
 
-$('input').keypress(() => {
-    $(this).parent().removeClass('error');
-    $(this).parent().removeClass('success');
+$('input').keyup((e) => {
+    var input = $(e.target);
+    input.parent().removeClass('error');
+    input.parent().removeClass('success');
 });

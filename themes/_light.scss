@@ -10,9 +10,15 @@ $foreground-nav: $foreground-item;
 $shadow: 0px 0px 10px rgba(0, 0, 0, 0.158);
 
 $accent: orange;
-$accent-hover: lighten($accent, 10%);
+$accent-hover: lighten($accent, 15%);
 $accent-click: darken($accent, 10%);
 $accent-foreground : $foreground;
 $foreground-accent: $foreground;
+
+$error: red;
+$error-border: opacify($error, 0.8);
+
+$success: green;
+$success-border: opacify($success, 0.8);
 
 $border: rgba(0,0,0,.15);

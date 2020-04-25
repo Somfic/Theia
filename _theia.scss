@@ -12,16 +12,26 @@ $transition : all ease 250ms;
 
 html {
     height: 100%;
+    display: flex;
 }
 
 body {
     background-color: $background;
     color: $foreground;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 main {
     margin: 20px 10%;
+    flex-grow: 1;
+}
+
+footer {
+    height: 80px;
+    background-color: $background-nav;
 }
 
 // Navigation
@@ -32,6 +42,9 @@ main {
 
 // Overviews
 @import './overview';
+
+// Cards
+@import './card';
 
 // Text
 @import './type';

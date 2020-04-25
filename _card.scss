@@ -1,0 +1,61 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background-color: $background-item;
+  box-shadow: $shadow;
+  padding: 20px;
+
+  img {
+    margin: 10px 0px;
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    height: 180px;
+  }
+
+  .body {
+    flex: 1 1 auto;
+    padding: 0px 20px;
+
+    .title {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .text {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .footer {
+    padding: 10px;
+    padding-top: 0px;
+
+    button,
+    .button {
+      margin-left: 0;
+    }
+  }
+}
+
+a.card {
+  color: $foreground;
+}
+
+a.card:hover,
+a.card:focus {
+  border: 1px solid $accent;
+}
+
+a.card::after {
+  display: none;
+}
+
+
+.card.no-padding{
+    padding: 0px;
+}
