@@ -15,7 +15,7 @@
                 class="h2 title">{{ site.data.sidebars[page.sidebar].title }}</a>
             <input type="text" placeholder="Search" id="searchbox">
 
-            {% for category in site.data.sidebars[page.sidebar] %}
+            {% for category in site.data.sidebars[page.sidebar].categories %}
             <div class="item">
                 <input type="checkbox" id="{{category.title}}" checked>
                 <label for="{{category.title}}">{{category.title}}</label>
