@@ -1260,6 +1260,10 @@ p {
   transition: color 150ms ease;
 }
 
+.article .sidebar a.active {
+  color: #e49400;
+}
+
 .article .sidebar a {
   padding-left: 0.75rem;
 }
