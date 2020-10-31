@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+    {% assign menu = site.data.choices[page.choice] %}
+
+    <div class="flex nowrap center vertical full-height">
+        <div class="text-center px-3">
+            <h1><span class="muted">{{ page.category }}/</span>{{ page.subject }}</h1>
+            <div class="h4 dark m-0">{{menu.prompt}}</div>
+        </div>
+        <div class="flex spaced g-1">
+            {%for choice in menu.choices %}
+                <a class="card clean" href="{{ choice.href }}">
+                    <img src="{{ choice.img }}}" alt="">
+                    <div class="body">
+                        <div class="title">{{ choice.title }}</div>
+                        <div class="text">{{ choice.subtitle }}</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html> 
