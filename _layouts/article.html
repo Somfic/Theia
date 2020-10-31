@@ -11,7 +11,7 @@
 <body>
     <div class="flex nowrap article">
         <div class="sidebar">
-            <a href="{{site.data.sidebars[page.sidebar].href}}"
+            <a class="clean" href="{{site.data.sidebars[page.sidebar].href}}"
                 class="h2 title">{{ site.data.sidebars[page.sidebar].title }}</a>
             <input type="text" placeholder="Search" id="searchbox">
 
@@ -22,7 +22,7 @@
                 <ul>
                     {% for item in category.items %}
                         <!-- TODO: support tags with search -->
-                        <li><a href="{{item.href}}">{{item.title}}</a></li>
+                        <li><a class="clean" href="{{item.href}}">{{item.title}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
