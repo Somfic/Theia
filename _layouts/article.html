@@ -20,7 +20,7 @@
                 <input type="checkbox" id="{{category.title}}" checked>
                 <label for="{{category.title}}">{{category.title}}</label>
                 <ul>
-                    {% for item category.items %}
+                    {% for item in category.items %}
                         <!-- TODO: support tags with search -->
                         <li><a href="{{item.href}}">{{item.title}}</a></li>
                     {% endfor %}
