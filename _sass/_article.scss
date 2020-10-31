@@ -1,0 +1,163 @@
+.article {
+    width: 100%;
+
+    .content {
+        margin: 4rem;
+        width: 100%;
+
+        .header {
+            width: 100%;
+            padding: 2rem;
+            padding-top: 4rem;
+            border: 2px solid $border;
+            background-color: $background-item;
+            border-radius: 2rem;
+            margin-bottom: 4rem;
+
+            .github {
+                margin: 2rem 1rem;
+                margin-bottom: 0rem;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                color: $foreground-dark;
+
+                .avatar {
+                    height: 100%;
+                    display: flex;
+                }
+
+                .audit {
+
+                }
+
+                img {
+                    display: block;
+                    border-radius: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                p {
+                    margin: auto .5rem;
+                    color: $foreground-muted;
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        .title {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        background-color: $background-nav;
+        padding: 1.5rem;
+        min-width: 250px;
+        white-space: nowrap;
+
+        #searchbox {
+            margin-bottom: 2rem;
+        }
+
+        .item ul,
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .item input:checked ~ ul {
+            display: block;
+            border-left: 2px solid $accent;
+        }
+
+        .item input:checked ~ label::before {
+            color: $accent;
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        ul,
+        li,
+        label {
+            margin-bottom: 0.25rem;
+        }
+
+        ul,
+        li {
+            margin-left: 0.5rem;
+        }
+
+        ul {
+            border-left: 2px solid transparent;
+            list-style: none;
+        }
+
+        label::before {
+            content: "•";
+            position: relative;
+            right: 0.6rem;
+            margin-left: 1rem;
+        }
+
+        label,
+        a {
+            min-width: 100%;
+            display: block;
+            padding: 0.25rem 0px;
+            transition: opacity 150ms ease;
+            transition: color 150ms ease;
+        }
+
+        a {
+            padding-left: 0.75rem;
+        }
+
+        a.searchresult, label.searchresult {
+            opacity: 1 !important;
+        }
+
+        label:hover,
+        a:hover {
+            color: $accent;
+            opacity: 1 !important;
+        }
+    }
+
+    .sidebar[isFiltered="true"] {
+        .item label, .item a {
+            opacity: 0.6;
+        }        
+    }
+
+    .contents {
+        padding: 1.5rem;
+        margin: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        background-color: $background-item;
+
+        opacity: .5;
+
+        a {
+            border-left: 2px solid transparent;
+            padding: 0px 0.5rem;
+        }
+
+        a.active {
+            color: $accent;
+            border-left: 2px solid $accent;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

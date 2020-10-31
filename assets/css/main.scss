@@ -1,0 +1,13 @@
+@import '/themes/dark';
+@import '/theia';
+
+.goback {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: $foreground-dark;
+}
+
+.goback::after {
+    background-color: $foreground-dark;
+}

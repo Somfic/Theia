@@ -1,0 +1,27 @@
+$background : rgb(10, 10, 15);
+$foreground : rgb(197, 197, 197);
+$foreground-muted: rgb(139, 139, 139);
+$foreground-dark: rgb(99, 99, 99);
+
+$background-item : rgb(29, 29, 31);
+$foreground-item: white;
+
+$background-nav: $background-item;
+$foreground-nav: $foreground-item;
+
+$shadow: 0px 0px 10px rgb(0, 0, 0);
+
+$accent: rgb(228, 148, 0);
+$accent-hover: lighten($accent, 12%);
+$accent-click: darken($accent, 10%);
+$accent-foreground : $accent;
+
+$error: red;
+$error-border: opacify($error, 0.8);
+
+$success: green;
+$success-border: opacify($success, 0.8);
+
+$foreground-accent: $background;
+
+$border: rgba(231, 231, 231, 0.15);
