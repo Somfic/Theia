@@ -66,6 +66,10 @@ nav.scrolled {
   backdrop-filter: blur(10px);
 }
 
+a.clean {
+  text-decoration: none;
+}
+
 a:not(.clean) {
   text-decoration: none;
   color: $accent;

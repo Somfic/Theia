@@ -11,11 +11,11 @@
 <body>
     <div class="flex nowrap article">
         <div class="sidebar">
-            {% assign sidebar = site.data.sidebars[page.sidebar]}
+            {% assign sidebar = site.data.sidebars[page.sidebar][0] %}
+            
+              
+            <a class="clean h2 title" href="{{sidebar.href}}">{{sidebar.title}}</a>
 
-            <p>Sidebar 2: {{ sidebar }}</p>
-            <a class="clean" href="{{ sidebar.href }}"
-                class="h2 title">{{ sidebar.title }}</a>
             <input type="text" placeholder="Search" id="searchbox">
 
             {% for category in sidebar.categories %}
@@ -24,8 +24,8 @@
                 <label for="{{category.name}}">{{category.name}}</label>
                 <ul>
                     {% for item in category.items %}
-                        <!-- TODO: support tags with search -->
-                        <li><a class="clean" href="{{item.href}}">{{item.title}}</a></li>
+                    <!-- TODO: support tags with search -->
+                    <li><a class="clean" href="{{item.href}}">{{item.title}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
