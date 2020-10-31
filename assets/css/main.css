@@ -140,23 +140,19 @@ nav.scrolled {
           backdrop-filter: blur(10px);
 }
 
-a.link {
+a:not(.clean) {
   text-decoration: none;
   color: #e49400;
   display: inline-block;
 }
 
-a.link::after {
+a:not(.clean)::after {
   content: "";
   display: block;
   height: 2px;
   background-color: #e49400;
   -webkit-transition: all ease 150ms;
   transition: all ease 150ms;
-}
-
-a {
-  text-decoration: none;
 }
 
 button,

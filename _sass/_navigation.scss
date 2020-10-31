@@ -66,22 +66,18 @@ nav.scrolled {
   backdrop-filter: blur(10px);
 }
 
-a.link {
+a:not(.clean) {
   text-decoration: none;
   color: $accent;
   display: inline-block;
 }
 
-a.link::after {
+a:not(.clean)::after {
   content: "";
   display: block;
   height: 2px;
   background-color: $accent;
   transition: $transition;
-}
-
-a {
-  text-decoration: none;
 }
 
 button,
