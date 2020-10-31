@@ -19,7 +19,7 @@
         <div class="flex spaced g-1">
             {%for choice in menu.choices %}
                 <a class="card clean" href="{{ choice.href }}">
-                    <img src="{{ choice.img }}}" alt="">
+                    <img src="{{ choice.img }}" alt="{{ choice.title }}">
                     <div class="body">
                         <div class="title">{{ choice.title }}</div>
                         <div class="text">{{ choice.subtitle }}</div>
