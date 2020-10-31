@@ -17,6 +17,10 @@ function getCommitByFile(user, repo, file) {
         file = file + 'index.html';
     }
 
+    if(!file.endsWith('.html')) {
+        file = file + '.html';
+    }
+
     file = file.replace('.html', '.md');
 
     console.log(file);
