@@ -11,7 +11,7 @@
 <body>
     <div class="flex nowrap article">
         <div class="sidebar">
-            {% assign sidebar = site.data.sidebars[page.sidebar][0] %}
+            {% assign sidebar = site.data.sidebars[page.sidebar] %}
             
               
             <a class="clean h2 title" href="{{sidebar.href}}">{{sidebar.title}}</a>
