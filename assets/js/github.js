@@ -13,6 +13,10 @@ function getRepo(user, repo) {
 }
 
 function getCommitByFile(user, repo, file) {
+    if(file.endsWith('/')) {
+        file = file + 'index.html';
+    }
+
     file = file.replace('.html', '.md');
 
     console.log(file);
