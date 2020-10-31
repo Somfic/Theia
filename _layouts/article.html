@@ -11,12 +11,14 @@
 <body>
     <div class="flex nowrap article">
         <div class="sidebar">
-            <p>Sidebar: {{ site.data.sidebars[page.sidebar]}}</p>
-            <a class="clean" href="{{site.data.sidebars[page.sidebar].href}}"
-                class="h2 title">{{ site.data.sidebars[page.sidebar].title }}</a>
+            {% assign sidebar = site.data.sidebars[page.sidebar]}
+
+            <p>Sidebar 2: {{ sidebar }}</p>
+            <a class="clean" href="{{ sidebar.href }}"
+                class="h2 title">{{ sidebar.title }}</a>
             <input type="text" placeholder="Search" id="searchbox">
 
-            {% for category in site.data.sidebars[page.sidebar].categories %}
+            {% for category in sidebar.categories %}
             <div class="item">
                 <input type="checkbox" id="{{category.name}}" checked>
                 <label for="{{category.name}}">{{category.name}}</label>
