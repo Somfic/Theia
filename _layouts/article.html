@@ -11,8 +11,21 @@
 <body>
     <div class="flex nowrap article">
         <div class="sidebar">
-            {% for item in site.data.sidebars[page.sidebar] %}
-            <p>{{item.title}}</p>
+            <a href="{{site.data.sidebars[page.sidebar].href}}"
+                class="h2 title">{{ site.data.sidebars[page.sidebar].title }}</a>
+            <input type="text" placeholder="Search" id="searchbox">
+
+            {% for category in site.data.sidebars[page.sidebar] %}
+            <div class="item">
+                <input type="checkbox" id="{{category.title}}" checked>
+                <label for="{{category.title}}">{{category.title}}</label>
+                <ul>
+                    {% for item category.items %}
+                        <!-- TODO: support tags with search -->
+                        <li><a href="{{item.href}}">{{item.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
             {% endfor %}
         </div>
         <div class="content">
