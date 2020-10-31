@@ -152,11 +152,18 @@ a:not(.clean) {
 
 a:not(.clean)::after {
   content: "";
+  width: 0;
+  opacity: 0;
   display: block;
   height: 2px;
   background-color: #e49400;
   -webkit-transition: all ease 150ms;
   transition: all ease 150ms;
+}
+
+a:not(.clean):hover::after {
+  width: 100%;
+  opacity: 1;
 }
 
 button,
