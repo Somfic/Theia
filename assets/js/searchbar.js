@@ -5,7 +5,9 @@ $.extend($.expr[':'], {
     }
 });
 
-let searchbox = $('#searchbox');
+let sidebar = $('.sidebar');
+
+let searchbox = sidebar.find('#searchbox');
 
 searchbox.on('input', () => {
     let searchterm = searchbox.val();
