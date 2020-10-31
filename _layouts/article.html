@@ -11,9 +11,8 @@
 <body>
     <div class="flex nowrap article">
         <div class="sidebar">
-            {% assign sidebar = site.data.sidebars[page.sidebar] %}
-            
-              
+            {% assign sidebar = site.data.sidebars[page.navigation] %}
+        
             <a class="clean h2 title" href="{{sidebar.href}}">{{sidebar.title}}</a>
 
             <input type="text" placeholder="Search" id="searchbox">
