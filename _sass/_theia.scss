@@ -54,6 +54,15 @@ footer {
 // Articles
 @import './article'; 
 
+// Lists
+@import './lists'; 
+
+// Code
+@import './code'; 
+
+// Tables
+@import './table';
+ 
 .outline {
     border: 1px solid $border;
     border-radius: 10px;
