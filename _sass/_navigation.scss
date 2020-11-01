@@ -76,6 +76,10 @@ a:not(.clean) {
   display: inline-block;
 }
 
+a.clean {
+  color: $foreground;
+}
+
 a:not(.clean)::after {
   content: "";
   width: 0;
