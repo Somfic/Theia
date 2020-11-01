@@ -1,0 +1,24 @@
+.content {
+    ul {
+        list-style-position: outside;
+    }
+
+    li {
+        list-style: none;
+        margin-left: 1rem;
+    }
+
+    ul>li {
+        margin-left: 0px;
+    }
+
+    li:before {
+        content: '';
+        width: .5rem;
+        height: .5rem;
+        display: inline-block;
+        background-color: $foreground-muted;
+        margin-right: .5rem;
+        border-radius: 2px;
+    }
+}
