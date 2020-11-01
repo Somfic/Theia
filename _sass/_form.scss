@@ -73,6 +73,10 @@ form {
   }
 }
 
+input:focus {
+  outline: none;
+}
+
 input[type="text"],
 input[type="password"] {
   background-color: $background-item;
@@ -86,15 +90,49 @@ input[type="password"] {
   border-radius: 10px;
   transition: $transition;
   box-shadow: none;
+
+  &:active, &:hover, &:focus {
+    border: 1px solid $accent;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+
+  &:before {
+    content: '';
+    margin-right: .5rem;
+    display: inline-block;
+    width: .9rem; 
+    height: .9rem;
+    border: 2px solid $accent;
+    vertical-align: middle;
+    background-color: $background-item;
+
+    transition: background-color 150ms ease;
+  }
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  &:before {
+    background-color: $accent;
+  }
+}
+
+input[type="checkbox"]:before {
+  border-radius: 5px;
+}
+
+
+input[type="radio"]:before {
+  border-radius: 100%;
 }
 
 input {
   margin: 10px 0px;
-}
-
-input:active,
-input:focus {
-  border: 1px solid $accent;
 }
 
 .submit {
