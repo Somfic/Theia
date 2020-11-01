@@ -74,3 +74,17 @@ searchbox.on('input', () => {
         item.addClass('searchresult');
     }
 });
+
+let thisFile = window.location.pathname;
+
+if(thisFile.endsWith('/')) {
+    thisFile = thisFile + 'index.html';
+}
+
+if(thisFile.endsWith('.html')) {
+    thisFile = thisFile.replace('.html', '');
+}
+
+console.log(thisFile);
+
+$('a').filter(function() { return (this.href.endsWith(thisFile) || this.href.endsWith(thisFile + '.html') ) }).addClass('active');

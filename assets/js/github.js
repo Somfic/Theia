@@ -23,8 +23,6 @@ function getCommitByFile(user, repo, file) {
 
     file = file.replace('.html', '.md');
 
-    console.log(file);
-
     commit = executeGithubApi("repos/" + user + "/" + repo + "/commits?path=" + file + "&page=1&per_page=1");
 
     return commit[0];

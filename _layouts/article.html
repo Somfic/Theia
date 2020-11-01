@@ -25,12 +25,8 @@
                     {% for item in category.items %}
                     <!-- TODO: support tags with search -->
                     <li>
-                    {% if page.url == item.href %}
-                        <a class="clean active" href="{{item.href}}">{{item.title}}</a>
-                    {% else %}
                         <a class="clean" href="{{item.href}}">{{item.title}}</a>
-                    {% endif %}
-                     </li>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
