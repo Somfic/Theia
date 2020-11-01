@@ -1374,6 +1374,7 @@ code {
 
 .language-plaintext {
   margin: 0px !important;
+  padding: .25rem .75rem !important;
 }
 
 .highlighter-rouge {
